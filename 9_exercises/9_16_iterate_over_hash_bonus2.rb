@@ -10,11 +10,9 @@ contacts.each_with_index do |(name,hash), index|              #  Iterates .each_
                   }
 end
 
-contacts.each do |name, values|             #  Iterates '.each' over 'contacts' hash recursively(?) to Title each person's personal info printed on separate lines 
-  puts "#{name}'s Contact Info:"            #  prints matching keys (email/phone/address)  for each 'contacts' hash name/key (person)
-  contacts[name].each do |key, value|              
-    puts  "#{key}: #{value}"
-  end
+contacts.each do |name, values|                                   #  Iterates '.each' over 'contacts' hash recursively(?) to give a Heading for each person's info
+  puts "#{name}'s Contact Info:"                              
+  contacts[name].each { |key, value| puts "#{key}: #{value}" }    #  Prints matching keys (email/phone/address)  for each 'contacts' hash name/key (person)
 end
 
 

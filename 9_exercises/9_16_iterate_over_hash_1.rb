@@ -24,18 +24,18 @@ contact_data = [["joe@email.com", "123 Main st.", "555-123-4567"],
 contacts = {"Joe Smith" => {}, "Sally Johnson" => {}}
 
 
-contacts["Joe Smith"] = {email: contact_data[0].first, 
+contacts["Joe Smith"] = {email: contact_data[0].first,      #  Adds email, address & phone hash values to the contacts hash for Joe's key
                          address: contact_data[0][1], 
                          phone: contact_data[0].last
                         }
 
-contacts["Sally Johnson"] = {email: contact_data[1].first, 
+contacts["Sally Johnson"] = {email: contact_data[1].first,  #  Adds email, address & phone hash values to the contacts hash for Sally's key
                              address: contact_data[1][1], 
                              phone: contact_data[1].last
                             }
 
-puts "Joe Smith's" 
-contacts.first.last.each { |key, values| puts "#{key} is #{values}" }
+puts "Joe Smith's"                                          #  Prints Joe Smith's name and associated contact info below on separate lines.
+contacts.first.last.each { |key, values| puts "#{key} is #{values}" }   
 
 
 

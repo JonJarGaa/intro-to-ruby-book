@@ -18,28 +18,26 @@ contacts hash.
 
 =end
 
-contact_data = [["joe@email.com", "123 Main st.", "555-123-4567"],
+contact_data = [["joe@email.com", "123 Main st.", "555-123-4567"],       #  Original Data Set Given
             ["sally@email.com", "404 Not Found Dr.", "123-234-3454"]]
 
-contacts = {"Joe Smith" => {}, "Sally Johnson" => {}}
+contacts = {"Joe Smith" => {}, "Sally Johnson" => {}}                    #  Original Data Set Given
 
 
-contacts["Joe Smith"] = {email: contact_data[0].first, 
+contacts["Joe Smith"] = {email: contact_data[0].first,     #  Adds email, address & phone hash values to the contacts hash for Joe's key
                          address: contact_data[0][1], 
                          phone: contact_data[0].last
                         }
 
-contacts["Sally Johnson"] = {email: contact_data[1].first, 
+contacts["Sally Johnson"] = {email: contact_data[1].first,  #  Adds email, address & phone hash values to the contacts hash for Sally's key
                              address: contact_data[1][1], 
                              phone: contact_data[1].last
                             }
 
 
-contacts.each do |name, values|
+contacts.each do |name, values|                #  Prints Joe Smith's name and associated contact info below on separate lines.
   puts "#{name}'s Contact Info:"
-  contacts[name].each do |key, value|
-    puts  "#{key}: #{value}"
-  end
+  contacts[name].each do |key, value| puts "#{key}: #{value}" }
 end
 
 
