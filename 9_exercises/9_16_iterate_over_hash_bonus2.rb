@@ -3,16 +3,16 @@ contact_data = [["joe@email.com", "123 Main st.", "555-123-4567"],
 
 contacts = {"Joe Smith" => {}, "Sally Johnson" => {}}
 
-contacts.each_with_index do |(name,hash), index|              #  Iterates .each_with_index over the contacts hash to create name, hash and index variables so hash keys/values can be added.
-  contacts[name] ={email: contact_data[0 + index].first,      #  Created new email, address & phone hash keys and setting them to associated data from contacts_data array for each contacts hash "name"/set.
-                   address: contact_data[0 + index][1],       #  index variable counter is used to locate the specific data that matches that key. As the index for the contacts hash increases to iterate over second hash set, it allows pulling from each additional nested array in contacts_data_array and is expandable for when more people's contact info needs to be stored. .
-                   phone: contact_data[0 + index].last
+contacts.each_with_index do |(name,hash), index|              #  Iterates .each_with_index over the contacts hash to create 'name', 'hash' and 'index' variables.
+  contacts[name] ={email: contact_data[0 + index].first,      #  Creates new 'email', 'address' & 'phone' hash keys, setting them to associated contacts_data array elements hash "name"/set.
+                   address: contact_data[0 + index][1],       #  Index variable counter is used to locate the specific data matching each key. As the index for the contacts hash increases 
+                   phone: contact_data[0 + index].last        #     iterating over additional hash sets (people with contact data), making this program expandable as people/data are added.
                   }
 end
 
-contacts.each do |name, values|             #  Prints a Title heading with each Person's name followed by 
-  puts "#{name}'s Contact Info:"            #  Separate lines for each piece of data stored
-  contacts[name].each do |key, value|
+contacts.each do |name, values|             #  Iterates '.each' over 'contacts' hash recursively(?) to Title each person's personal info printed on separate lines 
+  puts "#{name}'s Contact Info:"            #  prints matching keys (email/phone/address)  for each 'contacts' hash name/key (person)
+  contacts[name].each do |key, value|              
     puts  "#{key}: #{value}"
   end
 end
