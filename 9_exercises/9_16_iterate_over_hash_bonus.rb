@@ -35,7 +35,7 @@ contacts["Sally Johnson"] = {email: contact_data[1].first,  #  Adds email, addre
                             }
 
 
-contacts.each do |name, values|                #  Prints Joe Smith's name and associated contact info below on separate lines.
+contacts.each do |name, values|                #  Prints both people's names and associated contact info below on separate lines.
   puts "#{name}'s Contact Info:"
   contacts[name].each do |key, value| puts "#{key}: #{value}" }
 end
